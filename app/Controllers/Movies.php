@@ -16,7 +16,7 @@ class Movies extends BaseController
 
     public function index()
     {
-        $page = $this->request->getVar('page_actor') ? $this->request->getVar('page_actor') : 1;
+        $page = $this->request->getVar('page_movie') ? $this->request->getVar('page_movie') : 1;
         // $actor = $this->actorModel->findAll();
 
         $keyword = $this->request->getVar('keyword');
@@ -50,8 +50,10 @@ class Movies extends BaseController
         //validasi 
         if (!$this->validate([
             'title' => 'required|is_unique[movie.title]',
+            'director' => 'required',
+            'year' => 'required',
             'img' => [
-                'rules' => 'max_size[img,1024]|is_image[img]|mime_in[img,image/jpg,image/jpeg,image/png]',
+                'rules' => 'required|max_size[img,1024]|is_image[img]|mime_in[img,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Choose a smaller image',
                     'is_image' => 'What you choose is not a picture',
@@ -111,6 +113,8 @@ class Movies extends BaseController
 
         if (!$this->validate([
             'title' => $rule_title,
+            'director' => 'required',
+            'year' => 'required',
             'img' => [
                 'rules' => 'max_size[img,1024]|is_image[img]|mime_in[img,image/jpg,image/jpeg,image/png]',
                 'errors' => [

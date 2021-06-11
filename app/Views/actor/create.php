@@ -17,8 +17,21 @@
                 <div class="row mb-3">
                     <label for="gender" class="col-sm-2 col-form-label">Gender</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('gender')) ? 'is-invalid' : ''; ?>" id="gender" name="gender" value="<?= old('gender'); ?>">
-                        <div class="invalid-feedback"><?= $validation->getError('gender'); ?></div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input <?= ($validation->hasError('gender')) ? 'is-invalid' : ''; ?>" type="radio" name="gender" id="gender" value="male">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Male
+                            </label>
+                            <div class="invalid-feedback"><?= $validation->getError('gender'); ?></div>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input <?= ($validation->hasError('gender')) ? 'is-invalid' : ''; ?>" type="radio" name="gender" id="gender" value="female">
+
+                            <label class="form-check-label" for="exampleRadios2">
+                                Female
+                            </label>
+                            <div class="invalid-feedback"><?= $validation->getError('gender'); ?></div>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">

@@ -25,7 +25,7 @@
                     <label for="year" class="col-sm-2 col-form-label">Year</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control <?= ($validation->hasError('year')) ? 'is-invalid' : ''; ?>" id="year" name="year" value="<?= old('year'); ?>">
-                        <div class="invalid-feedback"><?= $validation->getError('year'); ?></div>
+                        <!-- <div class="invalid-feedback"><?= $validation->getError('year'); ?></div> -->
                     </div>
                 </div>
                 <div class="row mb-3">

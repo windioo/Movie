@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="my-3">Add Movie Form</h2>
+            <h2 class="my-3">Edit Movie Form</h2>
             <form action="/movies/update/<?= $movie['id']; ?>" method="POST" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="oldImg" value="<?= $movie['img']; ?>">
@@ -37,7 +37,7 @@
                         <div class="invalid-feedback"><?= $validation->getError('img'); ?></div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Add Movie</button>
+                <button type="submit" class="btn btn-primary">Edit Movie</button>
             </form>
         </div>
     </div>

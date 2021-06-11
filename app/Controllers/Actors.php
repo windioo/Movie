@@ -50,7 +50,9 @@ class Actors extends BaseController
     {
 
         if (!$this->validate([
-            'name' => 'required|is_unique[actor.name]'
+            'name' => 'required|is_unique[actor.name]',
+            'gender' => 'required',
+            'age' => 'required'
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('/actor/create')->withInput()->with('validation', $validation);
@@ -89,7 +91,9 @@ class Actors extends BaseController
         }
 
         if (!$this->validate([
-            'name' => $rule_name
+            'name' => $rule_name,
+            'gender' => 'required',
+            'age' => 'required'
         ])) {
 
             $validation = \Config\Services::validation();

@@ -6,7 +6,7 @@
         <div class="col-6">
             <h1 class="mt-5">Actor List</h1>
             <a href="/actor/create" class="btn btn-primary my-2">Add Actor</a>
-            <form action="" method="POST">
+            <form action="/actors" method="POST">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search name" name="keyword">
                     <div class="input-group-append">
