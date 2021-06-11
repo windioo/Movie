@@ -5,17 +5,28 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Master Data
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/actor">Actor</a></li>
-                        <li><a class="dropdown-item" href="/movies">Movie</a></li>
+                        <li><a class="dropdown-item" href="/movie">Movie</a></li>
                     </ul>
                 </li>
-            </div>
+            </ul>
+            <!-- <a href="/logout" class="nav-item nav-link text-end">Logout</a> -->
+        </div>
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <?= user()->username; ?>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
+                <li><a class="dropdown-item" href="/logout" onclick="return confirm( 'Are you sure?');">Log Out</a></li>
+            </ul>
         </div>
     </div>
 </nav>

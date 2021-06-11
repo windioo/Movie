@@ -4,10 +4,12 @@ namespace App\Controllers;
 
 use App\Models\Movie;
 
+
 class Movies extends BaseController
 {
 
     protected $movieModel;
+    protected $userModels;
 
     public function __construct()
     {
@@ -16,6 +18,7 @@ class Movies extends BaseController
 
     public function index()
     {
+
         $page = $this->request->getVar('page_movie') ? $this->request->getVar('page_movie') : 1;
         // $actor = $this->actorModel->findAll();
 
@@ -30,7 +33,8 @@ class Movies extends BaseController
             'title' => 'Movie',
             'movie' => $this->movieModel->paginate(10, 'movie'),
             'pager' => $this->movieModel->pager,
-            'page' => $page
+            'page' => $page,
+
         ];
         return view('movie/index', $data);
     }
