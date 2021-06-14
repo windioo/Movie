@@ -19,8 +19,8 @@
             <!-- <a href="/logout" class="nav-item nav-link text-end">Logout</a> -->
         </div>
         <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                <?= user()->username; ?>
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <?= user()->username ?>
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
